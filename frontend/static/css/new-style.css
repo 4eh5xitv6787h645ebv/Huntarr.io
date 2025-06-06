@@ -2276,6 +2276,23 @@ input[type="number"].interval-input,
     padding: 12px 8px !important;
 }
 
+/* Grouped duration inputs */
+.duration-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.duration-inputs input {
+    text-align: center;
+}
+
+.duration-inputs span {
+    color: var(--text-primary);
+    margin-right: 4px;
+}
+
 /* Stateful management header row with reset button */
 .stateful-header-row {
     display: flex;
