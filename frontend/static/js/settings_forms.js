@@ -111,13 +111,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of episodes to upgrade per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="sonarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="sonarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="sonarr_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="sonarr_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="sonarr_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="sonarr_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="sonarr_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="sonarr_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -279,13 +279,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of movies to search for quality upgrades per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="radarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="radarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="radarr_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="radarr_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="radarr_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="radarr_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="radarr_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="radarr_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -453,13 +453,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of albums to search for quality upgrades per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="lidarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="lidarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="lidarr_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="lidarr_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="lidarr_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="lidarr_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="lidarr_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="lidarr_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -593,13 +593,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of books to search for quality upgrades per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="readarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="readarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="readarr_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="readarr_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="readarr_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="readarr_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="readarr_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="readarr_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -731,13 +731,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of items to search for quality upgrades per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="whisparr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="whisparr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="whisparr_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="whisparr_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="whisparr_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="whisparr_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="whisparr_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="whisparr_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -883,13 +883,13 @@ const SettingsForms = {
                     <p class="setting-help">Number of items to search for quality upgrades per cycle (0 to disable)</p>
                 </div>
                 <div class="setting-item">
-                    <label for="eros_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
-                    <input type="number" id="eros_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
-                    <select id="eros_sleep_duration_unit">
-                        <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
-                        <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
-                        <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
-                    </select>
+                    <label for="eros_sleep_seconds"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
+                    <div class="duration-inputs">
+                        <input type="number" id="eros_sleep_seconds" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).seconds}"><span>Seconds</span>
+                        <input type="number" id="eros_sleep_minutes" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).minutes}"><span>Minutes</span>
+                        <input type="number" id="eros_sleep_hours" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).hours}"><span>Hours</span>
+                        <input type="number" id="eros_sleep_days" class="short-number-input interval-input" min="0" value="${SettingsForms.secondsToParts(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).days}"><span>Days</span>
+                    </div>
                     <p class="setting-help">Time between processing cycles</p>
                 </div>
                 <div class="setting-item">
@@ -974,12 +974,13 @@ const SettingsForms = {
             }
         }
 
-        function getDurationSeconds(valueSelector, unitSelector, defaultSeconds) {
-            const value = getInputValue(valueSelector, null);
-            const unitElement = container.querySelector(unitSelector);
-            const unit = unitElement ? unitElement.value : 'minutes';
-            if (value === null || isNaN(value)) return defaultSeconds;
-            return SettingsForms.valueUnitToSeconds(value, unit);
+        function getDurationSecondsFromParts(prefix, defaultSeconds) {
+            const sec = getInputValue(`#${prefix}_sleep_seconds`, 0);
+            const min = getInputValue(`#${prefix}_sleep_minutes`, 0);
+            const hr  = getInputValue(`#${prefix}_sleep_hours`, 0);
+            const day = getInputValue(`#${prefix}_sleep_days`, 0);
+            if ([sec, min, hr, day].every(v => v === null)) return defaultSeconds;
+            return SettingsForms.partsToSeconds({ seconds: sec || 0, minutes: min || 0, hours: hr || 0, days: day || 0 });
         }
         
         // For the general settings form, collect settings including advanced settings
@@ -1108,7 +1109,7 @@ const SettingsForms = {
                 settings.upgrade_mode = getInputValue('#sonarr-upgrade-mode', 'seasons_packs');
                 settings.hunt_missing_items = getInputValue('#sonarr-hunt-missing-items', 1);
                 settings.hunt_upgrade_items = getInputValue('#sonarr-hunt-upgrade-items', 0);
-                settings.sleep_duration = getDurationSeconds('#sonarr_sleep_duration', '#sonarr_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('sonarr', 900);
                 settings.hourly_cap = getInputValue('#sonarr_hourly_cap', 20);
                 settings.monitored_only = getInputValue('#sonarr_monitored_only', true);
                 settings.skip_future_episodes = getInputValue('#sonarr_skip_future_episodes', true);
@@ -1118,7 +1119,7 @@ const SettingsForms = {
             else if (appType === 'radarr') {
                 settings.hunt_missing_movies = getInputValue('#radarr_hunt_missing_movies', 1);
                 settings.hunt_upgrade_movies = getInputValue('#radarr_hunt_upgrade_movies', 0);
-                settings.sleep_duration = getDurationSeconds('#radarr_sleep_duration', '#radarr_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('radarr', 900);
                 settings.hourly_cap = getInputValue('#radarr_hourly_cap', 20);
                 settings.monitored_only = getInputValue('#radarr_monitored_only', true);
                 settings.skip_future_releases = getInputValue('#radarr_skip_future_releases', true);
@@ -1131,7 +1132,7 @@ const SettingsForms = {
                 settings.hunt_upgrade_items = getInputValue('#lidarr_hunt_upgrade_items', 0);
                 settings.hunt_missing_mode = getInputValue('#lidarr_hunt_missing_mode', 'album');
                 settings.monitored_only = getInputValue('#lidarr_monitored_only', true);
-                settings.sleep_duration = getDurationSeconds('#lidarr_sleep_duration', '#lidarr_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('lidarr', 900);
                 settings.hourly_cap = getInputValue('#lidarr_hourly_cap', 20);
                 settings.tag_processed_items = getInputValue('#lidarr_tag_processed_items', true);
             } 
@@ -1142,7 +1143,7 @@ const SettingsForms = {
                 settings.skip_future_releases = getInputValue('#readarr_skip_future_releases', true);
                 settings.tag_processed_items = getInputValue('#readarr_tag_processed_items', true);
 
-                settings.sleep_duration = getDurationSeconds('#readarr_sleep_duration', '#readarr_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('readarr', 900);
                 settings.hourly_cap = getInputValue('#readarr_hourly_cap', 20);
             } 
             else if (appType === 'whisparr') {
@@ -1153,7 +1154,7 @@ const SettingsForms = {
                 settings.skip_future_releases = getInputValue('#whisparr_skip_future_releases', true);
                 settings.tag_processed_items = getInputValue('#whisparr_tag_processed_items', true);
 
-                settings.sleep_duration = getDurationSeconds('#whisparr_sleep_duration', '#whisparr_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('whisparr', 900);
                 settings.hourly_cap = getInputValue('#whisparr_hourly_cap', 20);
             }
             else if (appType === 'eros') {
@@ -1164,7 +1165,7 @@ const SettingsForms = {
                 settings.skip_future_releases = getInputValue('#eros_skip_future_releases', true);
                 settings.tag_processed_items = getInputValue('#eros_tag_processed_items', true);
 
-                settings.sleep_duration = getDurationSeconds('#eros_sleep_duration', '#eros_sleep_duration_unit', 900);
+                settings.sleep_duration = getDurationSecondsFromParts('eros', 900);
                 settings.hourly_cap = getInputValue('#eros_hourly_cap', 20);
             }
         }
@@ -1421,16 +1422,21 @@ const SettingsForms = {
     
     // Update duration display - e.g., convert seconds to hours
     updateDurationDisplay: function() {
-        const updateSleepDisplay = function(inputId, unitId, spanId) {
-            const input = document.getElementById(inputId);
-            const unit = document.getElementById(unitId);
+        const updateSleepDisplay = function(prefix, spanId) {
+            const sec = document.getElementById(prefix + '_sleep_seconds');
+            const min = document.getElementById(prefix + '_sleep_minutes');
+            const hr = document.getElementById(prefix + '_sleep_hours');
+            const day = document.getElementById(prefix + '_sleep_days');
             const span = document.getElementById(spanId);
-            if (!input || !unit || !span) return;
+            if (!sec || !min || !hr || !day || !span) return;
 
-            const value = parseInt(input.value);
-            if (isNaN(value)) return;
-
-            const seconds = SettingsForms.valueUnitToSeconds(value, unit.value);
+            const parts = {
+                seconds: parseInt(sec.value) || 0,
+                minutes: parseInt(min.value) || 0,
+                hours: parseInt(hr.value) || 0,
+                days: parseInt(day.value) || 0
+            };
+            const seconds = SettingsForms.partsToSeconds(parts);
             const hours = (seconds / 3600).toFixed(1);
             if (seconds % 86400 === 0) {
                 span.textContent = `${(seconds / 86400).toFixed(1)} days`;
@@ -1441,32 +1447,29 @@ const SettingsForms = {
             }
         };
 
-        updateSleepDisplay('sonarr_sleep_duration', 'sonarr_sleep_duration_unit', 'sleep_duration_hours');
-        updateSleepDisplay('radarr_sleep_duration', 'radarr_sleep_duration_unit', 'radarr_sleep_duration_hours');
-        updateSleepDisplay('lidarr_sleep_duration', 'lidarr_sleep_duration_unit', 'lidarr_sleep_duration_hours');
-        updateSleepDisplay('readarr_sleep_duration', 'readarr_sleep_duration_unit', 'readarr_sleep_duration_hours');
-        updateSleepDisplay('whisparr_sleep_duration', 'whisparr_sleep_duration_unit', 'whisparr_sleep_duration_hours');
-        updateSleepDisplay('eros_sleep_duration', 'eros_sleep_duration_unit', 'eros_sleep_duration_hours');
+        updateSleepDisplay('sonarr', 'sleep_duration_hours');
+        updateSleepDisplay('radarr', 'radarr_sleep_duration_hours');
+        updateSleepDisplay('lidarr', 'lidarr_sleep_duration_hours');
+        updateSleepDisplay('readarr', 'readarr_sleep_duration_hours');
+        updateSleepDisplay('whisparr', 'whisparr_sleep_duration_hours');
+        updateSleepDisplay('eros', 'eros_sleep_duration_hours');
     },
 
-    // Convert seconds to a value and unit for display
-    secondsToValueUnit: function(seconds) {
-        let unit = 'minutes';
-        let value = Math.round(seconds / 60);
-        if (seconds % 86400 === 0) {
-            unit = 'days';
-            value = seconds / 86400;
-        } else if (seconds % 3600 === 0) {
-            unit = 'hours';
-            value = seconds / 3600;
-        }
-        return { value, unit };
+    // Convert seconds to individual parts
+    secondsToParts: function(totalSeconds) {
+        const days = Math.floor(totalSeconds / 86400);
+        totalSeconds %= 86400;
+        const hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        return { days, hours, minutes, seconds };
     },
 
-    // Convert a value and unit to seconds
-    valueUnitToSeconds: function(value, unit) {
-        const multiplier = unit === 'days' ? 86400 : unit === 'hours' ? 3600 : 60;
-        return value * multiplier;
+    // Convert parts back to seconds
+    partsToSeconds: function(parts) {
+        return (parts.days * 86400) + (parts.hours * 3600) +
+               (parts.minutes * 60) + (parts.seconds);
     },
     
     // Setup instance management - test connection buttons and add/remove instance buttons
