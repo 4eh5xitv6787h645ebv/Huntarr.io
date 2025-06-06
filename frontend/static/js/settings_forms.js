@@ -114,6 +114,7 @@ const SettingsForms = {
                     <label for="sonarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="sonarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="sonarr_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -282,6 +283,7 @@ const SettingsForms = {
                     <label for="radarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="radarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="radarr_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -456,6 +458,7 @@ const SettingsForms = {
                     <label for="lidarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="lidarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="lidarr_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -596,6 +599,7 @@ const SettingsForms = {
                     <label for="readarr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="readarr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="readarr_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -734,6 +738,7 @@ const SettingsForms = {
                     <label for="whisparr_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="whisparr_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="whisparr_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -886,6 +891,7 @@ const SettingsForms = {
                     <label for="eros_sleep_duration"><a href="/Huntarr.io/docs/#/configuration?id=sleep-duration" class="info-icon" title="Learn more about sleep duration" target="_blank" rel="noopener"><i class="fas fa-info-circle"></i></a>Sleep Duration:</label>
                     <input type="number" id="eros_sleep_duration" min="1" value="${(SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900)).value}">
                     <select id="eros_sleep_duration_unit">
+                        <option value="seconds" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'seconds' ? 'selected' : ''}>Seconds</option>
                         <option value="minutes" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'minutes' ? 'selected' : ''}>Minutes</option>
                         <option value="hours" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'hours' ? 'selected' : ''}>Hours</option>
                         <option value="days" ${SettingsForms.secondsToValueUnit(settings.sleep_duration !== undefined ? settings.sleep_duration : 900).unit === 'days' ? 'selected' : ''}>Days</option>
@@ -1432,7 +1438,9 @@ const SettingsForms = {
 
             const seconds = SettingsForms.valueUnitToSeconds(value, unit.value);
             const hours = (seconds / 3600).toFixed(1);
-            if (seconds % 86400 === 0) {
+            if (seconds < 60) {
+                span.textContent = `${seconds} seconds`;
+            } else if (seconds % 86400 === 0) {
                 span.textContent = `${(seconds / 86400).toFixed(1)} days`;
             } else if (hours < 1) {
                 span.textContent = `${Math.round(seconds / 60)} minutes`;
@@ -1451,21 +1459,24 @@ const SettingsForms = {
 
     // Convert seconds to a value and unit for display
     secondsToValueUnit: function(seconds) {
-        let unit = 'minutes';
-        let value = Math.round(seconds / 60);
+        let unit = 'seconds';
+        let value = seconds;
         if (seconds % 86400 === 0) {
             unit = 'days';
             value = seconds / 86400;
         } else if (seconds % 3600 === 0) {
             unit = 'hours';
             value = seconds / 3600;
+        } else if (seconds % 60 === 0) {
+            unit = 'minutes';
+            value = seconds / 60;
         }
         return { value, unit };
     },
 
     // Convert a value and unit to seconds
     valueUnitToSeconds: function(value, unit) {
-        const multiplier = unit === 'days' ? 86400 : unit === 'hours' ? 3600 : 60;
+        const multiplier = unit === 'days' ? 86400 : unit === 'hours' ? 3600 : unit === 'minutes' ? 60 : 1;
         return value * multiplier;
     },
     
